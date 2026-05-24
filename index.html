@@ -34,38 +34,48 @@ body{
 .bg1{background:#7c3aed; top:-150px; left:-150px;}
 .bg2{background:#2563eb; bottom:-150px; right:-150px;}
 
-/* NAV */
+/* NAVBAR */
 nav{
   position:fixed;
   top:0;
   width:100%;
-  padding:18px 10%;
+  padding:15px 10%;
   background:rgba(255,255,255,0.05);
   backdrop-filter:blur(12px);
   display:flex;
   justify-content:space-between;
   align-items:center;
   border-bottom:1px solid rgba(255,255,255,0.1);
+  z-index:1000;
 }
 
 nav h2{
   color:#60a5fa;
 }
 
-nav a{
+nav .right a{
   color:white;
   text-decoration:none;
   margin-left:15px;
+  padding:8px 12px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.05);
+  transition:0.3s;
+}
+
+nav .right a:hover{
+  background:#2563eb;
 }
 
 /* HERO */
 .hero{
   height:100vh;
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
   text-align:center;
+  padding:20px;
 }
 
 .hero h1{
@@ -129,51 +139,18 @@ section{
   border:1px solid rgba(255,255,255,0.1);
 }
 
-/* INPUT */
-input,textarea{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-  border-radius:8px;
-  border:none;
-  outline:none;
-}
-
-textarea{
-  height:100px;
-}
-
-/* BUTTON */
-button{
-  padding:10px 15px;
-  border:none;
-  border-radius:8px;
+/* STARS */
+.stars span{
+  font-size:25px;
   cursor:pointer;
-  background:#2563eb;
-  color:white;
+  color:#555;
 }
 
-button:hover{
-  background:#22c55e;
+.stars span.active{
+  color:gold;
 }
 
-/* SOCIAL */
-.socials{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  margin-top:20px;
-  flex-wrap:wrap;
-}
-
-.socials a{
-  color:white;
-  text-decoration:none;
-  padding:10px 15px;
-  background:rgba(255,255,255,0.05);
-  border-radius:10px;
-}
-
+/* FOOTER */
 footer{
   text-align:center;
   padding:25px;
@@ -192,10 +169,11 @@ footer{
 <!-- NAV -->
 <nav>
   <h2>Akshay</h2>
-  <div>
-    <a href="#about">About</a>
+
+  <div class="right">
+    <a href="#contact">Login</a>
+    <a href="https://drive.google.com/" target="_blank">Resume</a>
     <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
   </div>
 </nav>
 
@@ -207,29 +185,21 @@ footer{
 <div class="typing" id="typing"></div>
 
 <p style="margin-top:10px;color:#94a3b8;">
-Student • Editor • Developer • Learner
+Student • Editor • Developer
 </p>
 
 <div class="btns">
 <a class="btn" href="https://github.com/Akshaymali0027" target="_blank">GitHub</a>
-<a class="btn" href="https://drive.google.com/" target="_blank">Resume</a>
 <a class="btn" href="mailto:akshaymali0027@gmail.com">Email</a>
-</div>
-
-<div class="socials">
-<a href="https://instagram.com/akshay_p_mali/" target="_blank">Instagram</a>
-<a href="https://linkedin.com/in/akshay-mali-b06499411" target="_blank">LinkedIn</a>
-<a href="https://youtube.com/@Music8D_Ak/" target="_blank">YouTube</a>
 </div>
 
 </div>
 
 <!-- ABOUT -->
-<section id="about">
-<div class="title">About Me</div>
-<div class="grid">
-<div class="card">I am a student learning technology & editing.</div>
-<div class="card">I love building websites and editing videos.</div>
+<section>
+<div class="title">About</div>
+<div class="card">
+I am a student from Rajasthan learning technology, editing and web development.
 </div>
 </section>
 
@@ -239,48 +209,42 @@ Student • Editor • Developer • Learner
 
 <div class="card">Video Editing - 85%</div>
 <div class="card">Computer Basics - 75%</div>
-<div class="card">Communication - 70%</div>
 
 </section>
 
-<!-- LOGIN + REVIEW -->
+<!-- REVIEW -->
 <section id="contact">
 
-<div class="title">Login & Review System</div>
+<div class="title">Leave a Review ⭐</div>
 
-<div class="grid">
-
-<!-- LOGIN -->
 <div class="card">
-<h3>Login</h3>
-<input placeholder="Name">
-<input placeholder="Email">
-<input type="password" placeholder="Password">
-
-<button onclick="alert('Login Successful (Demo)')">Login</button>
-</div>
-
-<!-- REVIEW -->
-<div class="card">
-<h3>Leave Review</h3>
 
 <input id="name" placeholder="Your Name">
-<textarea id="msg" placeholder="Write your message"></textarea>
+<textarea id="msg" placeholder="Write review..."></textarea>
 
-<button onclick="sendReview()">Send</button>
+<div class="stars" id="stars">
+  <span>★</span>
+  <span>★</span>
+  <span>★</span>
+  <span>★</span>
+  <span>★</span>
 </div>
+
+<br>
+
+<button onclick="sendReview()">Submit Review</button>
 
 </div>
 
 </section>
 
 <footer>
-© 2026 Akshay Kumar Mali • Ultra Modern Portfolio
+© 2026 Akshay Kumar Mali • All Rights Reserved
 </footer>
 
 <script>
 
-// typing effect
+// typing
 let text="Student • Editor • Developer • Creator";
 let i=0;
 
@@ -293,19 +257,30 @@ function type(){
 }
 type();
 
-// review system
-function sendReview(){
-  let n=document.getElementById("name").value;
-  let m=document.getElementById("msg").value;
+// STAR SYSTEM
+let stars = document.querySelectorAll(".stars span");
 
-  if(n==""||m==""){
+stars.forEach((star, index)=>{
+  star.addEventListener("click", ()=>{
+    stars.forEach((s,i)=>{
+      s.classList.toggle("active", i<=index);
+    });
+  });
+});
+
+// REVIEW SEND
+function sendReview(){
+  let name=document.getElementById("name").value;
+  let msg=document.getElementById("msg").value;
+
+  if(name=="" || msg==""){
     alert("Fill all fields!");
     return;
   }
 
-  alert("Thanks "+n+"! Your message sent 🚀");
+  alert("Thanks "+name+" ⭐ Review sent!");
 
-  console.log("Review:",n,m);
+  console.log(name,msg);
 }
 
 </script>
