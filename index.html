@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshay Mali | Next Level Portfolio</title>
+<title>Akshay Mali | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -14,50 +14,72 @@
   padding:0;
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
 }
 
 body{
-  background:#050816;
+  background:#0a0f1e;
   color:white;
-  overflow-x:hidden;
 }
 
-/* PARTICLES */
-.particle{
-  position:absolute;
-  width:6px;
-  height:6px;
-  background:#60a5fa;
-  border-radius:50%;
-  animation:float 8s linear infinite;
-  opacity:0.5;
+/* BACKGROUND GLOW */
+.bg{
+  position:fixed;
+  width:500px;
+  height:500px;
+  filter:blur(180px);
+  opacity:0.4;
+  z-index:-1;
 }
 
-@keyframes float{
-  0%{transform:translateY(100vh);}
-  100%{transform:translateY(-10vh);}
+.bg1{background:#7c3aed; top:-150px; left:-150px;}
+.bg2{background:#2563eb; bottom:-150px; right:-150px;}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 10%;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+nav h2{
+  color:#60a5fa;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+  font-size:14px;
 }
 
 /* HERO */
 .hero{
   height:100vh;
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
+  flex-direction:column;
   text-align:center;
   padding:20px;
 }
 
 .hero h1{
-  font-size:65px;
-  background:linear-gradient(90deg,#60a5fa,#a78bfa,#22c55e);
+  font-size:60px;
+  background:linear-gradient(90deg,#60a5fa,#a78bfa);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
 .typing{
-  font-size:22px;
+  font-size:20px;
   margin-top:10px;
   color:#cbd5e1;
   border-right:2px solid #60a5fa;
@@ -74,22 +96,22 @@ body{
 }
 
 .btn{
-  padding:12px 20px;
+  padding:12px 18px;
   border-radius:10px;
   text-decoration:none;
   font-weight:600;
   transition:0.3s;
-  border:1px solid rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15);
 }
 
 .btn:hover{
-  transform:scale(1.1);
+  transform:scale(1.05);
   background:#2563eb;
 }
 
-/* CARDS */
+/* SECTIONS */
 section{
-  padding:80px 10%;
+  padding:90px 10%;
 }
 
 .title{
@@ -99,6 +121,7 @@ section{
   margin-bottom:30px;
 }
 
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -106,22 +129,21 @@ section{
 }
 
 .card{
+  background:rgba(255,255,255,0.05);
   padding:25px;
   border-radius:15px;
-  background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.1);
   transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
+  transform:translateY(-8px);
   border-color:#60a5fa;
-  box-shadow:0 0 20px #2563eb;
 }
 
 /* SKILLS */
 .skill{
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
 
 .bar{
@@ -133,7 +155,7 @@ section{
 
 .fill{
   height:100%;
-  background:linear-gradient(90deg,#60a5fa,#22c55e);
+  background:linear-gradient(90deg,#60a5fa,#a78bfa);
 }
 
 /* SOCIAL */
@@ -149,20 +171,44 @@ section{
   padding:10px 15px;
   border-radius:10px;
   background:rgba(255,255,255,0.05);
-  color:white;
   text-decoration:none;
-  transition:0.3s;
+  color:white;
 }
 
 .socials a:hover{
-  background:#22c55e;
-  transform:translateY(-5px);
+  background:#2563eb;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  color:#94a3b8;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{font-size:38px;}
 }
 
 </style>
 </head>
 
 <body>
+
+<div class="bg bg1"></div>
+<div class="bg bg2"></div>
+
+<!-- NAV -->
+<nav>
+  <h2>Akshay</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
 <!-- HERO -->
 <div class="hero">
@@ -172,98 +218,96 @@ section{
 <div class="typing" id="typing"></div>
 
 <p style="margin-top:15px;color:#94a3b8;max-width:600px;">
-Ultra Modern Developer Portfolio | Student | Editor | Creator
+Student • Video Editor • Tech Enthusiast
 </p>
 
 <div class="btns">
-<a class="btn" href="https://github.com/Akshaymali0027">GitHub</a>
-<a class="btn" href="mailto:akshaymali0027@gmail.com">Email</a>
-<a class="btn" href="#">Resume</a>
+
+<a class="btn" href="https://github.com/Akshaymali0027" target="_blank">GitHub</a>
+
+<a class="btn" href="https://drive.google.com/" target="_blank">
+Download Resume
+</a>
+
+<a class="btn" href="mailto:akshaymali0027@gmail.com">Contact</a>
+
 </div>
 
 <div class="socials">
-<a href="https://www.instagram.com/akshay_p_mali/">Instagram</a>
-<a href="https://linkedin.com/in/akshay-mali-b06499411">LinkedIn</a>
-<a href="https://www.youtube.com/@Music8D_Ak/">YouTube</a>
+
+<a href="https://www.instagram.com/akshay_p_mali/" target="_blank">Instagram</a>
+
+<a href="https://linkedin.com/in/akshay-mali-b06499411" target="_blank">LinkedIn</a>
+
+<a href="https://www.youtube.com/@Music8D_Ak/" target="_blank">YouTube</a>
+
 </div>
 
 </div>
 
 <!-- ABOUT -->
-<section>
-<div class="title">About Me</div>
-<div class="grid">
-<div class="card">Student from Rajasthan learning tech & editing.</div>
-<div class="card">Love coding, editing and building websites.</div>
-</div>
+<section id="about">
+  <div class="title">About Me</div>
+
+  <div class="grid">
+    <div class="card">
+      I am a student from Rajasthan interested in technology, editing and web development.
+    </div>
+
+    <div class="card">
+      I am learning skills to build my future in digital world.
+    </div>
+  </div>
 </section>
 
 <!-- SKILLS -->
-<section>
-<div class="title">Skills</div>
+<section id="skills">
+  <div class="title">Skills</div>
 
-<div class="card">
-Video Editing
-<div class="bar"><div class="fill" style="width:85%"></div></div>
-</div>
+  <div class="card">
+    Video Editing
+    <div class="bar"><div class="fill" style="width:85%"></div></div>
+  </div>
 
-<div class="card">
-Computer Skills
-<div class="bar"><div class="fill" style="width:75%"></div></div>
-</div>
+  <div class="card">
+    Computer Basics
+    <div class="bar"><div class="fill" style="width:75%"></div></div>
+  </div>
 
-<div class="card">
-Communication
-<div class="bar"><div class="fill" style="width:70%"></div></div>
-</div>
-
+  <div class="card">
+    Communication
+    <div class="bar"><div class="fill" style="width:70%"></div></div>
+  </div>
 </section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="title">Contact</div>
+
+  <div class="card">
+    Email: akshaymali0027@gmail.com
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Akshay Kumar Mali • All Rights Reserved
+</footer>
 
 <script>
 
 // typing effect
-const texts = [
-"Student",
-"Video Editor",
-"Tech Enthusiast",
-"Future Developer"
-];
-
-let i=0, j=0;
-let currentText="";
-let isDeleting=false;
+let text = "Student • Editor • Learner • Creator";
+let i = 0;
 
 function type(){
-  currentText = texts[i];
-
-  if(!isDeleting){
-    document.getElementById("typing").innerHTML = currentText.substring(0,j++);
-    if(j>currentText.length){
-      isDeleting=true;
-      setTimeout(type,1000);
-      return;
-    }
-  } else {
-    document.getElementById("typing").innerHTML = currentText.substring(0,j--);
-    if(j<0){
-      isDeleting=false;
-      i=(i+1)%texts.length;
-    }
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type,80);
   }
-
-  setTimeout(type,100);
 }
-
 type();
-
-// particles
-for(let i=0;i<25;i++){
-  let p=document.createElement("div");
-  p.className="particle";
-  p.style.left=Math.random()*100+"vw";
-  p.style.animationDuration=(Math.random()*5+3)+"s";
-  document.body.appendChild(p);
-}
 
 </script>
 
