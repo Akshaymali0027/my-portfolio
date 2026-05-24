@@ -1,27 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akshay Mali Portfolio</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      text-align:center;
+      padding:60px 20px;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+    }
+
+    header h1{
+      font-size:50px;
+      margin-bottom:10px;
+    }
+
+    header p{
+      font-size:20px;
+      opacity:0.9;
+    }
+
+    .container{
+      width:90%;
+      max-width:1000px;
+      margin:auto;
+      padding:40px 0;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:30px;
+      margin-bottom:25px;
+      border-radius:15px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    h2{
+      color:#60a5fa;
+      margin-bottom:15px;
+    }
+
+    ul{
+      list-style:none;
+    }
+
+    ul li{
+      padding:10px;
+      background:#334155;
+      margin:8px 0;
+      border-radius:8px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:15px;
+      padding:12px 20px;
+      background:#2563eb;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#1d4ed8;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size:35px;
+      }
+
+      header p{
+        font-size:18px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Akshay Kumar Mali</h1>
-  <p>Student | Tech Enthusiast | Video Editor</p>
 
-  <h2>About Me</h2>
-  <p>
-    I am learning computers, video editing, and technology.
-    I enjoy learning new skills and building my future in tech.
-  </p>
+  <header>
+    <h1>Akshay Kumar Mali</h1>
+    <p>Student | Tech Enthusiast | Video Editor</p>
+  </header>
 
-  <h2>Skills</h2>
-  <ul>
-    <li>Computer Basics</li>
-    <li>Video Editing</li>
-    <li>Trading Knowledge</li>
-    <li>Driving</li>
-  </ul>
+  <div class="container">
 
-  <h2>Contact</h2>
-  <p>Email: akshaymali0027@gmail.com</p>
+    <div class="card">
+      <h2>About Me</h2>
+      <p>
+        I am a student from Rajasthan who is passionate about technology,
+        computers, video editing, and learning new digital skills.
+        I enjoy building projects and improving myself every day.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Skills</h2>
+      <ul>
+        <li>Computer Basics</li>
+        <li>Video Editing</li>
+        <li>Trading Knowledge</li>
+        <li>Driving</li>
+        <li>Communication Skills</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Projects</h2>
+      <p>Personal Portfolio Website</p>
+      <a href="https://github.com/Akshaymali0027" class="btn">
+        Visit My GitHub
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Email: akshaymali0027@gmail.com</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Akshay Kumar Mali | Portfolio Website</p>
+  </footer>
+
 </body>
 </html>
