@@ -1,486 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akshay Mali | Ultra Modern Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshay Mali | Professional Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-      scroll-behavior:smooth;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
 
-    body{
-      background:#050816;
-      color:white;
-      overflow-x:hidden;
-    }
+body{
+  background:#050816;
+  color:white;
+}
 
-    body::before{
-      content:"";
-      position:fixed;
-      width:500px;
-      height:500px;
-      background:#7c3aed;
-      filter:blur(180px);
-      top:-150px;
-      left:-150px;
-      z-index:-1;
-      opacity:0.5;
-      animation:move1 8s infinite alternate;
-    }
+/* BACKGROUND GLOW */
+.bg1, .bg2{
+  position:fixed;
+  width:500px;
+  height:500px;
+  filter:blur(180px);
+  z-index:-1;
+  opacity:0.5;
+}
 
-    body::after{
-      content:"";
-      position:fixed;
-      width:500px;
-      height:500px;
-      background:#2563eb;
-      filter:blur(180px);
-      bottom:-150px;
-      right:-150px;
-      z-index:-1;
-      opacity:0.5;
-      animation:move2 8s infinite alternate;
-    }
+.bg1{
+  background:#7c3aed;
+  top:-150px;
+  left:-150px;
+}
 
-    @keyframes move1{
-      from{transform:translateY(0);}
-      to{transform:translateY(80px);}
-    }
+.bg2{
+  background:#2563eb;
+  bottom:-150px;
+  right:-150px;
+}
 
-    @keyframes move2{
-      from{transform:translateX(0);}
-      to{transform:translateX(-80px);}
-    }
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 10%;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
 
-    nav{
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:25px 10%;
-      position:fixed;
-      top:0;
-      z-index:1000;
-      background:rgba(255,255,255,0.05);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,0.1);
-    }
+nav h2{
+  color:#60a5fa;
+}
 
-    nav h2{
-      font-size:28px;
-      font-weight:700;
-      color:#60a5fa;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:14px;
+}
 
-    nav ul{
-      display:flex;
-      gap:30px;
-      list-style:none;
-    }
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
+}
 
-    nav ul li a{
-      color:white;
-      text-decoration:none;
-      transition:0.3s;
-    }
+.hero h1{
+  font-size:60px;
+  background:linear-gradient(90deg,#60a5fa,#a78bfa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    nav ul li a:hover{
-      color:#60a5fa;
-    }
+.typing{
+  font-size:22px;
+  margin-top:10px;
+  color:#cbd5e1;
+  border-right:2px solid #60a5fa;
+  white-space:nowrap;
+  overflow:hidden;
+  width:0;
+  animation:typing 4s steps(40,end) forwards, blink 0.8s infinite;
+}
 
-    .hero{
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-direction:column;
-      text-align:center;
-      padding:0 20px;
-    }
+@keyframes typing{
+  from{width:0;}
+  to{width:360px;}
+}
 
-    .hero h1{
-      font-size:75px;
-      font-weight:700;
-      margin-bottom:20px;
-      background:linear-gradient(to right,#60a5fa,#c084fc);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+@keyframes blink{
+  50%{border-color:transparent;}
+}
 
-    .typing{
-      font-size:28px;
-      color:#cbd5e1;
-      border-right:3px solid #60a5fa;
-      white-space:nowrap;
-      overflow:hidden;
-      width:0;
-      animation:typing 4s steps(40,end) forwards,
-      blink 0.8s infinite;
-    }
+/* BUTTONS */
+.btns{
+  margin-top:25px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
 
-    @keyframes typing{
-      from{width:0;}
-      to{width:430px;}
-    }
+.btn{
+  padding:12px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
 
-    @keyframes blink{
-      50%{border-color:transparent;}
-    }
+.primary{
+  background:linear-gradient(135deg,#2563eb,#7c3aed);
+  color:white;
+}
 
-    .hero p{
-      max-width:750px;
-      color:#94a3b8;
-      font-size:18px;
-      line-height:1.8;
-      margin-top:30px;
-    }
+.secondary{
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+}
 
-    .btns{
-      margin-top:35px;
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
+.btn:hover{
+  transform:scale(1.05);
+}
 
-    .btn{
-      padding:14px 28px;
-      border-radius:12px;
-      text-decoration:none;
-      font-weight:600;
-      transition:0.3s;
-    }
+/* SECTIONS */
+section{
+  padding:90px 10%;
+}
 
-    .primary{
-      background:linear-gradient(135deg,#2563eb,#7c3aed);
-      color:white;
-    }
+.title{
+  text-align:center;
+  font-size:40px;
+  margin-bottom:40px;
+  color:#60a5fa;
+}
 
-    .secondary{
-      border:1px solid rgba(255,255,255,0.2);
-      color:white;
-      backdrop-filter:blur(10px);
-    }
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-    .btn:hover{
-      transform:translateY(-5px) scale(1.05);
-    }
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.3s;
+}
 
-    section{
-      padding:100px 10%;
-    }
+.card:hover{
+  transform:translateY(-10px);
+  border-color:#60a5fa;
+}
 
-    .section-title{
-      font-size:42px;
-      margin-bottom:50px;
-      text-align:center;
-      background:linear-gradient(to right,#60a5fa,#c084fc);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+/* SKILLS */
+.skill{
+  margin-bottom:18px;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:30px;
-    }
+.bar{
+  height:10px;
+  background:#1e293b;
+  border-radius:20px;
+  overflow:hidden;
+}
 
-    .card{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.1);
-      backdrop-filter:blur(12px);
-      padding:30px;
-      border-radius:20px;
-      transition:0.4s;
-    }
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,#60a5fa,#a78bfa);
+}
 
-    .card:hover{
-      transform:translateY(-10px);
-      border-color:#60a5fa;
-      box-shadow:0 10px 30px rgba(96,165,250,0.3);
-    }
+/* SOCIAL */
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
 
-    .card h3{
-      margin-bottom:15px;
-      color:#60a5fa;
-    }
+.socials a{
+  padding:10px 15px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.05);
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
 
-    .card p{
-      color:#cbd5e1;
-      line-height:1.7;
-    }
+.socials a:hover{
+  background:#2563eb;
+  transform:translateY(-5px);
+}
 
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:15px;
-      justify-content:center;
-    }
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
 
-    .skill{
-      padding:14px 24px;
-      border-radius:12px;
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.1);
-      transition:0.3s;
-    }
+@media(max-width:768px){
+  .hero h1{font-size:40px;}
+  .typing{font-size:16px;}
+}
 
-    .skill:hover{
-      background:#2563eb;
-      transform:scale(1.08);
-    }
-
-    .socials{
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      margin-top:30px;
-      flex-wrap:wrap;
-    }
-
-    .socials a{
-      text-decoration:none;
-      color:white;
-      padding:12px 22px;
-      border-radius:12px;
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.1);
-      transition:0.3s;
-    }
-
-    .socials a:hover{
-      background:#2563eb;
-      transform:translateY(-5px);
-    }
-
-    footer{
-      text-align:center;
-      padding:40px 20px;
-      color:#94a3b8;
-      border-top:1px solid rgba(255,255,255,0.1);
-    }
-
-    @media(max-width:768px){
-
-      nav{
-        padding:20px;
-      }
-
-      nav ul{
-        display:none;
-      }
-
-      .hero h1{
-        font-size:45px;
-      }
-
-      .typing{
-        font-size:18px;
-        width:100%;
-        animation:none;
-        border:none;
-      }
-
-      .section-title{
-        font-size:32px;
-      }
-
-    }
-
-  </style>
-
+</style>
 </head>
 
 <body>
 
-  <nav>
+<div class="bg1"></div>
+<div class="bg2"></div>
 
-    <h2>Akshay</h2>
+<nav>
+  <h2>Akshay</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+<!-- HERO -->
+<div class="hero">
 
-  </nav>
+  <h1>Akshay Kumar Mali</h1>
 
-  <div class="hero">
+  <div class="typing" id="typing"></div>
 
-    <h1>Akshay Kumar Mali</h1>
+  <p style="margin-top:20px;color:#94a3b8;max-width:600px;">
+    Student • Tech Enthusiast • Video Editor • Learner
+  </p>
 
-    <div class="typing">
-      Student • Tech Enthusiast • Video Editor
-    </div>
+  <div class="btns">
 
-    <p>
-      Passionate about technology, digital creativity, and learning modern skills.
-      Building my future through coding, content creation, and continuous learning.
-    </p>
+    <a class="btn primary" href="https://github.com/Akshaymali0027" target="_blank">GitHub</a>
 
-    <div class="btns">
+    <a class="btn secondary" href="mailto:akshaymali0027@gmail.com">Email</a>
 
-      <a href="https://github.com/Akshaymali0027" target="_blank" class="btn primary">
-        GitHub
-      </a>
-
-      <a href="mailto:akshaymali0027@gmail.com" class="btn secondary">
-        Contact Me
-      </a>
-
-      <a href="#" class="btn secondary">
-        Download Resume
-      </a>
-
-    </div>
-
-    <div class="socials">
-
-      <a href="https://github.com/Akshaymali0027" target="_blank">
-        GitHub
-      </a>
-
-      <a href="https://linkedin.com/in/akshay-mali-b06499411" target="_blank">
-        LinkedIn
-      </a>
-
-      <a href="https://www.instagram.com/akshay_p_mali/" target="_blank">
-        Instagram
-      </a>
-
-      <a href="https://www.youtube.com/@Music8D_Ak/" target="_blank">
-        YouTube
-      </a>
-
-      <a href="https://sites.google.com/view/prakashmarble/home" target="_blank">
-        Website
-      </a>
-
-    </div>
+    <a class="btn secondary" href="#">Resume</a>
 
   </div>
 
-  <section id="about">
+  <div class="socials">
 
-    <h2 class="section-title">About Me</h2>
+    <a href="https://www.instagram.com/akshay_p_mali/" target="_blank">Instagram</a>
 
-    <div class="cards">
+    <a href="https://linkedin.com/in/akshay-mali-b06499411" target="_blank">LinkedIn</a>
 
-      <div class="card">
-        <h3>Who Am I?</h3>
+    <a href="https://www.youtube.com/@Music8D_Ak/" target="_blank">YouTube</a>
 
-        <p>
-          I am a student from Rajasthan, India, passionate about technology,
-          computers, video editing, and building creative digital projects.
-        </p>
-      </div>
+  </div>
 
-      <div class="card">
-        <h3>My Goal</h3>
+</div>
 
-        <p>
-          My goal is to improve my skills, build modern projects,
-          and grow professionally in the tech industry.
-        </p>
-      </div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="title">About Me</div>
 
+  <div class="grid">
+    <div class="card">
+      I am a student from Rajasthan learning technology, editing and web development.
     </div>
 
-  </section>
-
-  <section id="skills">
-
-    <h2 class="section-title">Skills</h2>
-
-    <div class="skills">
-
-      <div class="skill">Computer Basics</div>
-
-      <div class="skill">Video Editing</div>
-
-      <div class="skill">Trading Knowledge</div>
-
-      <div class="skill">Communication</div>
-
-      <div class="skill">Internet & Technology</div>
-
-      <div class="skill">Content Creation</div>
-
+    <div class="card">
+      I love creating videos, learning new skills and building modern websites.
     </div>
+  </div>
+</section>
 
-  </section>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="title">Skills</div>
 
-  <section id="projects">
+  <div class="card">
+    Video Editing
+    <div class="bar"><div class="fill" style="width:80%"></div></div>
+  </div>
 
-    <h2 class="section-title">Projects</h2>
+  <div class="card">
+    Computer Basics
+    <div class="bar"><div class="fill" style="width:70%"></div></div>
+  </div>
 
-    <div class="cards">
+  <div class="card">
+    Communication
+    <div class="bar"><div class="fill" style="width:65%"></div></div>
+  </div>
 
-      <div class="card">
-        <h3>Portfolio Website</h3>
+</section>
 
-        <p>
-          A modern responsive personal portfolio website hosted using GitHub Pages.
-        </p>
-      </div>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="title">Contact</div>
 
-      <div class="card">
-        <h3>YouTube Channel</h3>
+  <div class="card">
+    Email: akshaymali0027@gmail.com
+  </div>
+</section>
 
-        <p>
-          Sharing music and creative content on YouTube.
-        </p>
-      </div>
+<footer>
+  © 2026 Akshay Mali | Professional Portfolio
+</footer>
 
-    </div>
+<script>
 
-  </section>
+// typing effect
+let text = "Student • Video Editor • Tech Enthusiast";
+let i = 0;
 
-  <section id="contact">
+function typing(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing,80);
+  }
+}
+typing();
 
-    <h2 class="section-title">Contact</h2>
-
-    <div class="cards">
-
-      <div class="card">
-
-        <h3>Email</h3>
-
-        <p>
-          akshaymali0027@gmail.com
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <h3>Location</h3>
-
-        <p>
-          Rajasthan, India
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <footer>
-
-    © 2026 Akshay Kumar Mali • Ultra Modern Portfolio
-
-  </footer>
+</script>
 
 </body>
 </html>
