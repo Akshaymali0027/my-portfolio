@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akshay Mali Portfolio</title>
+  <title>Akshay Kumar Mali | Portfolio</title>
 
   <style>
 
@@ -21,94 +21,112 @@
     }
 
     header{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
       text-align:center;
-      padding:60px 20px;
       background:linear-gradient(135deg,#2563eb,#7c3aed);
-    }
-
-    .profile-pic{
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      object-fit:cover;
-      border:5px solid white;
-      margin-bottom:20px;
+      padding:20px;
     }
 
     header h1{
-      font-size:45px;
-      margin-bottom:10px;
-    }
-
-    header p{
-      font-size:20px;
-    }
-
-    .container{
-      width:90%;
-      max-width:1000px;
-      margin:auto;
-      padding:40px 0;
-    }
-
-    .card{
-      background:#1e293b;
-      padding:30px;
-      margin-bottom:25px;
-      border-radius:15px;
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-5px);
-    }
-
-    h2{
-      color:#60a5fa;
+      font-size:60px;
       margin-bottom:15px;
     }
 
-    ul{
-      list-style:none;
-    }
-
-    ul li{
-      background:#334155;
-      padding:10px;
-      margin:10px 0;
-      border-radius:8px;
+    header p{
+      font-size:24px;
+      opacity:0.9;
+      margin-bottom:25px;
     }
 
     .btn{
       display:inline-block;
-      margin-top:15px;
-      padding:12px 20px;
-      background:#2563eb;
-      color:white;
+      padding:14px 28px;
+      background:white;
+      color:#111827;
       text-decoration:none;
-      border-radius:8px;
+      border-radius:10px;
+      font-weight:bold;
+      transition:0.3s;
     }
 
     .btn:hover{
-      background:#1d4ed8;
+      transform:scale(1.05);
+    }
+
+    .container{
+      width:90%;
+      max-width:1100px;
+      margin:auto;
+      padding:60px 0;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:35px;
+      border-radius:18px;
+      margin-bottom:30px;
+      transition:0.3s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    h2{
+      color:#60a5fa;
+      margin-bottom:18px;
+      font-size:32px;
+    }
+
+    p{
+      font-size:18px;
+    }
+
+    .skills{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px;
+      margin-top:20px;
+    }
+
+    .skill{
+      background:#334155;
+      padding:15px;
+      border-radius:10px;
+      text-align:center;
+      font-size:18px;
+    }
+
+    .contact a{
+      color:#60a5fa;
+      text-decoration:none;
     }
 
     footer{
       text-align:center;
-      padding:20px;
+      padding:25px;
       background:#111827;
       margin-top:40px;
+      font-size:16px;
     }
 
     @media(max-width:768px){
 
       header h1{
-        font-size:32px;
+        font-size:38px;
       }
 
-      .profile-pic{
-        width:140px;
-        height:140px;
+      header p{
+        font-size:18px;
+      }
+
+      h2{
+        font-size:26px;
       }
 
     }
@@ -121,11 +139,13 @@
 
   <header>
 
-    <img src="profile.jpg" alt="Akshay Mali" class="profile-pic">
-
     <h1>Akshay Kumar Mali</h1>
 
-    <p>Student | Tech Enthusiast | Video Editor</p>
+    <p>Student • Tech Enthusiast • Video Editor</p>
+
+    <a href="https://github.com/Akshaymali0027" class="btn">
+      Visit My GitHub
+    </a>
 
   </header>
 
@@ -136,24 +156,32 @@
       <h2>About Me</h2>
 
       <p>
-        I am a student from Rajasthan who is passionate about technology,
-        computers, video editing, and learning new digital skills.
-        I enjoy building projects and improving myself every day.
+        I am a passionate student from Rajasthan, India, interested in technology,
+        computers, video editing, and digital creativity. I enjoy learning new
+        skills, building projects, and improving myself every day.
       </p>
 
     </div>
 
     <div class="card">
 
-      <h2>Skills</h2>
+      <h2>My Skills</h2>
 
-      <ul>
-        <li>Computer Basics</li>
-        <li>Video Editing</li>
-        <li>Trading Knowledge</li>
-        <li>Driving</li>
-        <li>Communication Skills</li>
-      </ul>
+      <div class="skills">
+
+        <div class="skill">Computer Basics</div>
+
+        <div class="skill">Video Editing</div>
+
+        <div class="skill">Trading Knowledge</div>
+
+        <div class="skill">Communication Skills</div>
+
+        <div class="skill">Driving</div>
+
+        <div class="skill">Internet & Technology</div>
+
+      </div>
 
     </div>
 
@@ -161,19 +189,22 @@
 
       <h2>Projects</h2>
 
-      <p>Personal Portfolio Website</p>
-
-      <a href="https://github.com/Akshaymali0027" class="btn">
-        Visit My GitHub
-      </a>
+      <p>
+        ✔ Personal Portfolio Website<br><br>
+        More exciting projects coming soon...
+      </p>
 
     </div>
 
-    <div class="card">
+    <div class="card contact">
 
       <h2>Contact</h2>
 
-      <p>Email: akshaymali0027@gmail.com</p>
+      <p>Email: 
+        <a href="mailto:akshaymali0027@gmail.com">
+          akshaymali0027@gmail.com
+        </a>
+      </p>
 
     </div>
 
@@ -181,7 +212,7 @@
 
   <footer>
 
-    <p>© 2026 Akshay Kumar Mali | Portfolio Website</p>
+    © 2026 Akshay Kumar Mali • Portfolio Website
 
   </footer>
 
