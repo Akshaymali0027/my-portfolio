@@ -3,159 +3,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshay Mali | Pro Portfolio</title>
+<title>Akshay Mali | Ultra Pro Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+/* ================= GLOBAL ================= */
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-  background:#0a0f1e;
-  color:white;
+background:#0a0f1e;
+color:white;
+overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* ================= BACKGROUND ================= */
+
 .bg1,.bg2{
-  position:fixed;
-  width:500px;
-  height:500px;
-  filter:blur(180px);
-  opacity:0.4;
-  z-index:-1;
+position:fixed;
+width:500px;
+height:500px;
+filter:blur(200px);
+opacity:0.4;
+z-index:-1;
 }
 
-.bg1{background:#7c3aed; top:-150px; left:-150px;}
-.bg2{background:#2563eb; bottom:-150px; right:-150px;}
+.bg1{
+background:#7c3aed;
+top:-150px;
+left:-150px;
+animation:move1 10s infinite alternate;
+}
 
-/* NAVBAR */
+.bg2{
+background:#2563eb;
+bottom:-150px;
+right:-150px;
+animation:move2 10s infinite alternate;
+}
+
+@keyframes move1{
+from{transform:translateY(0);}
+to{transform:translateY(100px);}
+}
+
+@keyframes move2{
+from{transform:translateX(0);}
+to{transform:translateX(-100px);}
+}
+
+/* ================= NAVBAR ================= */
+
 nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:15px 10%;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(12px);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid rgba(255,255,255,0.1);
-  z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+padding:15px 10%;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid rgba(255,255,255,0.1);
+z-index:1000;
 }
 
 nav h2{
-  color:#60a5fa;
+color:#60a5fa;
 }
 
-nav .right a{
-  color:white;
-  text-decoration:none;
-  margin-left:15px;
-  padding:8px 12px;
-  border-radius:8px;
-  background:rgba(255,255,255,0.05);
-  transition:0.3s;
+nav .links a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+padding:8px 12px;
+border-radius:8px;
+transition:0.3s;
 }
 
-nav .right a:hover{
-  background:#2563eb;
+nav .links a:hover{
+background:#2563eb;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
 .hero h1{
-  font-size:60px;
-  background:linear-gradient(90deg,#60a5fa,#a78bfa);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+font-size:60px;
+background:linear-gradient(90deg,#60a5fa,#a78bfa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .typing{
-  font-size:20px;
-  margin-top:10px;
-  border-right:2px solid #60a5fa;
-  white-space:nowrap;
-  overflow:hidden;
+font-size:20px;
+margin-top:10px;
+border-right:2px solid #60a5fa;
+white-space:nowrap;
+overflow:hidden;
 }
 
-/* BUTTONS */
 .btns{
-  margin-top:20px;
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
+margin-top:25px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .btn{
-  padding:10px 15px;
-  border-radius:10px;
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,0.2);
-  color:white;
-  transition:0.3s;
+padding:10px 15px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.2);
+text-decoration:none;
+color:white;
+transition:0.3s;
 }
 
 .btn:hover{
-  background:#2563eb;
+background:#2563eb;
+transform:scale(1.05);
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
+
 section{
-  padding:90px 10%;
+padding:90px 10%;
 }
 
 .title{
-  text-align:center;
-  font-size:35px;
-  color:#60a5fa;
-  margin-bottom:30px;
+text-align:center;
+font-size:38px;
+color:#60a5fa;
+margin-bottom:30px;
 }
 
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .card{
-  background:rgba(255,255,255,0.05);
-  padding:25px;
-  border-radius:15px;
-  border:1px solid rgba(255,255,255,0.1);
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.1);
+transition:0.3s;
 }
 
-/* STARS */
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* ================= SKILLS ================= */
+
+.skill{
+margin-bottom:20px;
+}
+
+.bar{
+height:10px;
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+background:linear-gradient(90deg,#60a5fa,#a78bfa);
+}
+
+/* ================= SOCIAL ================= */
+
+.socials{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.socials a{
+padding:10px 15px;
+border-radius:10px;
+background:rgba(255,255,255,0.05);
+color:white;
+text-decoration:none;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+text-align:center;
+padding:25px;
+border-top:1px solid rgba(255,255,255,0.1);
+color:#94a3b8;
+}
+
+/* ================= MODAL LOGIN ================= */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.modal-content{
+background:#111827;
+padding:30px;
+border-radius:15px;
+width:300px;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:8px;
+border:none;
+outline:none;
+}
+
+button{
+padding:10px;
+width:100%;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#22c55e;
+}
+
+/* ================= STARS ================= */
+
 .stars span{
-  font-size:25px;
-  cursor:pointer;
-  color:#555;
+font-size:22px;
+cursor:pointer;
+color:#555;
 }
 
 .stars span.active{
-  color:gold;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:25px;
-  border-top:1px solid rgba(255,255,255,0.1);
-  color:#94a3b8;
+color:gold;
 }
 
 </style>
@@ -166,15 +282,19 @@ footer{
 <div class="bg1"></div>
 <div class="bg2"></div>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav>
-  <h2>Akshay</h2>
 
-  <div class="right">
-    <a href="#contact">Login</a>
-    <a href="https://drive.google.com/" target="_blank">Resume</a>
-    <a href="#skills">Skills</a>
-  </div>
+<h2>Akshay</h2>
+
+<div class="links">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+<a href="#" onclick="openLogin()">Login</a>
+<a href="https://drive.google.com/" target="_blank">Resume</a>
+</div>
+
 </nav>
 
 <!-- HERO -->
@@ -185,21 +305,22 @@ footer{
 <div class="typing" id="typing"></div>
 
 <p style="margin-top:10px;color:#94a3b8;">
-Student • Editor • Developer
+Student • Editor • Developer • Creator
 </p>
 
 <div class="btns">
-<a class="btn" href="https://github.com/Akshaymali0027" target="_blank">GitHub</a>
+<a class="btn" href="https://github.com/Akshaymali0027">GitHub</a>
 <a class="btn" href="mailto:akshaymali0027@gmail.com">Email</a>
 </div>
 
 </div>
 
 <!-- ABOUT -->
-<section>
+<section id="about">
 <div class="title">About</div>
-<div class="card">
-I am a student from Rajasthan learning technology, editing and web development.
+<div class="grid">
+<div class="card">Student from Rajasthan learning tech.</div>
+<div class="card">Passionate about editing & development.</div>
 </div>
 </section>
 
@@ -207,80 +328,121 @@ I am a student from Rajasthan learning technology, editing and web development.
 <section id="skills">
 <div class="title">Skills</div>
 
-<div class="card">Video Editing - 85%</div>
-<div class="card">Computer Basics - 75%</div>
+<div class="card">
+Video Editing
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<div class="card">
+Computer Basics
+<div class="bar"><div class="fill" style="width:75%"></div></div>
+</div>
+
+<div class="card">
+Communication
+<div class="bar"><div class="fill" style="width:70%"></div></div>
+</div>
 
 </section>
 
-<!-- REVIEW -->
+<!-- CONTACT + REVIEW -->
 <section id="contact">
 
-<div class="title">Leave a Review ⭐</div>
+<div class="title">Reviews ⭐</div>
 
 <div class="card">
 
 <input id="name" placeholder="Your Name">
-<textarea id="msg" placeholder="Write review..."></textarea>
+<textarea id="msg" placeholder="Write review"></textarea>
 
 <div class="stars" id="stars">
-  <span>★</span>
-  <span>★</span>
-  <span>★</span>
-  <span>★</span>
-  <span>★</span>
+<span>★</span>
+<span>★</span>
+<span>★</span>
+<span>★</span>
+<span>★</span>
 </div>
 
 <br>
 
-<button onclick="sendReview()">Submit Review</button>
+<button onclick="sendReview()">Submit</button>
 
 </div>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
-© 2026 Akshay Kumar Mali • All Rights Reserved
+© 2026 Akshay Kumar Mali • Ultra Modern Portfolio
 </footer>
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+<div class="modal-content">
+
+<h3>Login</h3>
+
+<input placeholder="Name">
+<input placeholder="Email">
+<input type="password" placeholder="Password">
+
+<button onclick="alert('Login Success!')">Login</button>
+
+<br><br>
+
+<button onclick="closeLogin()">Close</button>
+
+</div>
+</div>
 
 <script>
 
-// typing
+/* typing */
 let text="Student • Editor • Developer • Creator";
 let i=0;
 
 function type(){
-  if(i<text.length){
-    document.getElementById("typing").innerHTML+=text.charAt(i);
-    i++;
-    setTimeout(type,80);
-  }
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,80);
+}
 }
 type();
 
-// STAR SYSTEM
-let stars = document.querySelectorAll(".stars span");
+/* login */
+function openLogin(){
+document.getElementById("loginModal").style.display="flex";
+}
 
-stars.forEach((star, index)=>{
-  star.addEventListener("click", ()=>{
-    stars.forEach((s,i)=>{
-      s.classList.toggle("active", i<=index);
-    });
-  });
+function closeLogin(){
+document.getElementById("loginModal").style.display="none";
+}
+
+/* stars */
+let stars=document.querySelectorAll(".stars span");
+
+stars.forEach((s,i)=>{
+s.onclick=()=>{
+stars.forEach((x,j)=>{
+x.classList.toggle("active", j<=i);
+});
+};
 });
 
-// REVIEW SEND
+/* review */
 function sendReview(){
-  let name=document.getElementById("name").value;
-  let msg=document.getElementById("msg").value;
 
-  if(name=="" || msg==""){
-    alert("Fill all fields!");
-    return;
-  }
+let n=document.getElementById("name").value;
+let m=document.getElementById("msg").value;
 
-  alert("Thanks "+name+" ⭐ Review sent!");
+if(n==""||m==""){
+alert("Fill all fields");
+return;
+}
 
-  console.log(name,msg);
+alert("Thanks "+n+" ⭐ Review received!");
+console.log(n,m);
 }
 
 </script>
