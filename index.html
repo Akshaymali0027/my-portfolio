@@ -6,11 +6,12 @@
   <title>Akshay Mali Portfolio</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, sans-serif;
+      font-family:Arial, sans-serif;
     }
 
     body{
@@ -25,14 +26,22 @@
       background:linear-gradient(135deg,#2563eb,#7c3aed);
     }
 
+    .profile-pic{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid white;
+      margin-bottom:20px;
+    }
+
     header h1{
-      font-size:50px;
+      font-size:45px;
       margin-bottom:10px;
     }
 
     header p{
       font-size:20px;
-      opacity:0.9;
     }
 
     .container{
@@ -64,9 +73,9 @@
     }
 
     ul li{
-      padding:10px;
       background:#334155;
-      margin:8px 0;
+      padding:10px;
+      margin:10px 0;
       border-radius:8px;
     }
 
@@ -78,7 +87,6 @@
       color:white;
       text-decoration:none;
       border-radius:8px;
-      transition:0.3s;
     }
 
     .btn:hover{
@@ -93,37 +101,52 @@
     }
 
     @media(max-width:768px){
+
       header h1{
-        font-size:35px;
+        font-size:32px;
       }
 
-      header p{
-        font-size:18px;
+      .profile-pic{
+        width:140px;
+        height:140px;
       }
+
     }
+
   </style>
+
 </head>
 
 <body>
 
   <header>
+
+    <img src="profile.jpg" alt="Akshay Mali" class="profile-pic">
+
     <h1>Akshay Kumar Mali</h1>
+
     <p>Student | Tech Enthusiast | Video Editor</p>
+
   </header>
 
   <div class="container">
 
     <div class="card">
+
       <h2>About Me</h2>
+
       <p>
         I am a student from Rajasthan who is passionate about technology,
         computers, video editing, and learning new digital skills.
         I enjoy building projects and improving myself every day.
       </p>
+
     </div>
 
     <div class="card">
+
       <h2>Skills</h2>
+
       <ul>
         <li>Computer Basics</li>
         <li>Video Editing</li>
@@ -131,25 +154,35 @@
         <li>Driving</li>
         <li>Communication Skills</li>
       </ul>
+
     </div>
 
     <div class="card">
+
       <h2>Projects</h2>
+
       <p>Personal Portfolio Website</p>
+
       <a href="https://github.com/Akshaymali0027" class="btn">
         Visit My GitHub
       </a>
+
     </div>
 
     <div class="card">
+
       <h2>Contact</h2>
+
       <p>Email: akshaymali0027@gmail.com</p>
+
     </div>
 
   </div>
 
   <footer>
+
     <p>© 2026 Akshay Kumar Mali | Portfolio Website</p>
+
   </footer>
 
 </body>
