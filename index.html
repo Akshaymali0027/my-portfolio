@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshay Mali | Professional Portfolio</title>
+<title>Akshay Mali | Next Level Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -14,75 +14,44 @@
   padding:0;
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
-  scroll-behavior:smooth;
 }
 
 body{
   background:#050816;
   color:white;
+  overflow-x:hidden;
 }
 
-/* BACKGROUND GLOW */
-.bg1, .bg2{
-  position:fixed;
-  width:500px;
-  height:500px;
-  filter:blur(180px);
-  z-index:-1;
+/* PARTICLES */
+.particle{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:#60a5fa;
+  border-radius:50%;
+  animation:float 8s linear infinite;
   opacity:0.5;
 }
 
-.bg1{
-  background:#7c3aed;
-  top:-150px;
-  left:-150px;
-}
-
-.bg2{
-  background:#2563eb;
-  bottom:-150px;
-  right:-150px;
-}
-
-/* NAVBAR */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:18px 10%;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(12px);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid rgba(255,255,255,0.1);
-}
-
-nav h2{
-  color:#60a5fa;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:20px;
-  font-size:14px;
+@keyframes float{
+  0%{transform:translateY(100vh);}
+  100%{transform:translateY(-10vh);}
 }
 
 /* HERO */
 .hero{
   height:100vh;
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
   text-align:center;
   padding:20px;
 }
 
 .hero h1{
-  font-size:60px;
-  background:linear-gradient(90deg,#60a5fa,#a78bfa);
+  font-size:65px;
+  background:linear-gradient(90deg,#60a5fa,#a78bfa,#22c55e);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
@@ -94,17 +63,6 @@ nav a{
   border-right:2px solid #60a5fa;
   white-space:nowrap;
   overflow:hidden;
-  width:0;
-  animation:typing 4s steps(40,end) forwards, blink 0.8s infinite;
-}
-
-@keyframes typing{
-  from{width:0;}
-  to{width:360px;}
-}
-
-@keyframes blink{
-  50%{border-color:transparent;}
 }
 
 /* BUTTONS */
@@ -113,7 +71,6 @@ nav a{
   display:flex;
   gap:15px;
   flex-wrap:wrap;
-  justify-content:center;
 }
 
 .btn{
@@ -122,35 +79,26 @@ nav a{
   text-decoration:none;
   font-weight:600;
   transition:0.3s;
-}
-
-.primary{
-  background:linear-gradient(135deg,#2563eb,#7c3aed);
-  color:white;
-}
-
-.secondary{
-  border:1px solid rgba(255,255,255,0.2);
-  color:white;
+  border:1px solid rgba(255,255,255,0.1);
 }
 
 .btn:hover{
-  transform:scale(1.05);
+  transform:scale(1.1);
+  background:#2563eb;
 }
 
-/* SECTIONS */
+/* CARDS */
 section{
-  padding:90px 10%;
+  padding:80px 10%;
 }
 
 .title{
   text-align:center;
-  font-size:40px;
-  margin-bottom:40px;
+  font-size:38px;
   color:#60a5fa;
+  margin-bottom:30px;
 }
 
-/* CARDS */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -158,9 +106,9 @@ section{
 }
 
 .card{
-  background:rgba(255,255,255,0.05);
   padding:25px;
   border-radius:15px;
+  background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.1);
   transition:0.3s;
 }
@@ -168,11 +116,12 @@ section{
 .card:hover{
   transform:translateY(-10px);
   border-color:#60a5fa;
+  box-shadow:0 0 20px #2563eb;
 }
 
 /* SKILLS */
 .skill{
-  margin-bottom:18px;
+  margin-bottom:15px;
 }
 
 .bar{
@@ -184,7 +133,7 @@ section{
 
 .fill{
   height:100%;
-  background:linear-gradient(90deg,#60a5fa,#a78bfa);
+  background:linear-gradient(90deg,#60a5fa,#22c55e);
 }
 
 /* SOCIAL */
@@ -206,21 +155,8 @@ section{
 }
 
 .socials a:hover{
-  background:#2563eb;
+  background:#22c55e;
   transform:translateY(-5px);
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px;
-  color:#94a3b8;
-  border-top:1px solid rgba(255,255,255,0.1);
-}
-
-@media(max-width:768px){
-  .hero h1{font-size:40px;}
-  .typing{font-size:16px;}
 }
 
 </style>
@@ -228,114 +164,106 @@ footer{
 
 <body>
 
-<div class="bg1"></div>
-<div class="bg2"></div>
-
-<nav>
-  <h2>Akshay</h2>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
 <!-- HERO -->
 <div class="hero">
 
-  <h1>Akshay Kumar Mali</h1>
+<h1>Akshay Kumar Mali</h1>
 
-  <div class="typing" id="typing"></div>
+<div class="typing" id="typing"></div>
 
-  <p style="margin-top:20px;color:#94a3b8;max-width:600px;">
-    Student • Tech Enthusiast • Video Editor • Learner
-  </p>
+<p style="margin-top:15px;color:#94a3b8;max-width:600px;">
+Ultra Modern Developer Portfolio | Student | Editor | Creator
+</p>
 
-  <div class="btns">
+<div class="btns">
+<a class="btn" href="https://github.com/Akshaymali0027">GitHub</a>
+<a class="btn" href="mailto:akshaymali0027@gmail.com">Email</a>
+<a class="btn" href="#">Resume</a>
+</div>
 
-    <a class="btn primary" href="https://github.com/Akshaymali0027" target="_blank">GitHub</a>
-
-    <a class="btn secondary" href="mailto:akshaymali0027@gmail.com">Email</a>
-
-    <a class="btn secondary" href="#">Resume</a>
-
-  </div>
-
-  <div class="socials">
-
-    <a href="https://www.instagram.com/akshay_p_mali/" target="_blank">Instagram</a>
-
-    <a href="https://linkedin.com/in/akshay-mali-b06499411" target="_blank">LinkedIn</a>
-
-    <a href="https://www.youtube.com/@Music8D_Ak/" target="_blank">YouTube</a>
-
-  </div>
+<div class="socials">
+<a href="https://www.instagram.com/akshay_p_mali/">Instagram</a>
+<a href="https://linkedin.com/in/akshay-mali-b06499411">LinkedIn</a>
+<a href="https://www.youtube.com/@Music8D_Ak/">YouTube</a>
+</div>
 
 </div>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="title">About Me</div>
-
-  <div class="grid">
-    <div class="card">
-      I am a student from Rajasthan learning technology, editing and web development.
-    </div>
-
-    <div class="card">
-      I love creating videos, learning new skills and building modern websites.
-    </div>
-  </div>
+<section>
+<div class="title">About Me</div>
+<div class="grid">
+<div class="card">Student from Rajasthan learning tech & editing.</div>
+<div class="card">Love coding, editing and building websites.</div>
+</div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
-  <div class="title">Skills</div>
+<section>
+<div class="title">Skills</div>
 
-  <div class="card">
-    Video Editing
-    <div class="bar"><div class="fill" style="width:80%"></div></div>
-  </div>
+<div class="card">
+Video Editing
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
 
-  <div class="card">
-    Computer Basics
-    <div class="bar"><div class="fill" style="width:70%"></div></div>
-  </div>
+<div class="card">
+Computer Skills
+<div class="bar"><div class="fill" style="width:75%"></div></div>
+</div>
 
-  <div class="card">
-    Communication
-    <div class="bar"><div class="fill" style="width:65%"></div></div>
-  </div>
+<div class="card">
+Communication
+<div class="bar"><div class="fill" style="width:70%"></div></div>
+</div>
 
 </section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="title">Contact</div>
-
-  <div class="card">
-    Email: akshaymali0027@gmail.com
-  </div>
-</section>
-
-<footer>
-  © 2026 Akshay Mali | Professional Portfolio
-</footer>
 
 <script>
 
 // typing effect
-let text = "Student • Video Editor • Tech Enthusiast";
-let i = 0;
+const texts = [
+"Student",
+"Video Editor",
+"Tech Enthusiast",
+"Future Developer"
+];
 
-function typing(){
-  if(i < text.length){
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typing,80);
+let i=0, j=0;
+let currentText="";
+let isDeleting=false;
+
+function type(){
+  currentText = texts[i];
+
+  if(!isDeleting){
+    document.getElementById("typing").innerHTML = currentText.substring(0,j++);
+    if(j>currentText.length){
+      isDeleting=true;
+      setTimeout(type,1000);
+      return;
+    }
+  } else {
+    document.getElementById("typing").innerHTML = currentText.substring(0,j--);
+    if(j<0){
+      isDeleting=false;
+      i=(i+1)%texts.length;
+    }
   }
+
+  setTimeout(type,100);
 }
-typing();
+
+type();
+
+// particles
+for(let i=0;i<25;i++){
+  let p=document.createElement("div");
+  p.className="particle";
+  p.style.left=Math.random()*100+"vw";
+  p.style.animationDuration=(Math.random()*5+3)+"s";
+  document.body.appendChild(p);
+}
 
 </script>
 
